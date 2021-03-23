@@ -1,20 +1,20 @@
 package com.demo.practice;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/demo")
+@RequestMapping("/person")
+@Slf4j
 public class Controller {
 
-    @GetMapping("/test")
-    public String hello(@RequestParam(value = "name", required = true)String name){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("your name is :");
-        stringBuilder.append(name);
+    @PostMapping("/add")
+    public String list(demoDTO dto){
+        log.info("이름" + dto.getName());
+        log.info("나이" + dto.getAge());
 
-        return stringBuilder.toString();
+        // 회원가입 로직
+
+        return "done";
     }
 }
