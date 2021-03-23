@@ -37,3 +37,5 @@ public class Controller {
 # 실행결과
 
 ![](imgs/result.png)
+
+![](imgs/result1.png)
